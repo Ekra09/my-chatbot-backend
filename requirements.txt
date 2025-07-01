@@ -1,0 +1,8 @@
+rasa==3.6.10
+requests
+aiohttp
+config.yml
+
+domain.yml
+
+Dockerfile
