@@ -2,18 +2,21 @@ FROM rasa/rasa:3.6.10
 
 WORKDIR /app
 
+# Copy everything from your repo to the container
 COPY . /app
 
-# ✅ Debug what's inside the working directory
-RUN echo "===== DIRECTORY LIST =====" && ls -al /app
-RUN echo "===== REQUIREMENTS.TXT CONTENT =====" && cat /app/requirements.txt || echo "File not found"
+# Debug 1: Show what files exist
+RUN echo "=== DIRECTORY CONTENTS ===" && ls -al /app
 
-# ✅ Install Python dependencies
+# Debug 2: Show contents of requirements.txt (if it exists)
+RUN echo "=== REQUIREMENTS.TXT CONTENT ===" && cat /app/requirements.txt || echo "requirements.txt not found"
+
+# Upgrade pip just in case (safe)
 RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+
+# Main step - install requirements
+RUN echo "=== INSTALLING REQUIREMENTS ===" && pip install -r /app/requirements.txt
 
 EXPOSE 10000
 
 CMD ["run", "--enable-api", "--cors", "*", "--port", "10000", "--debug"]
-
-
