@@ -4,8 +4,12 @@ WORKDIR /app
 
 COPY . /app
 
-RUN ls -al /app
-RUN cat requirements.txt
+# ✅ Debug what's inside the working directory
+RUN echo "===== DIRECTORY LIST =====" && ls -al /app
+RUN echo "===== REQUIREMENTS.TXT CONTENT =====" && cat /app/requirements.txt || echo "File not found"
+
+# ✅ Install Python dependencies
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 EXPOSE 10000
