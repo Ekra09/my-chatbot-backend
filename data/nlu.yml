@@ -1,0 +1,53 @@
+version: "3.1"
+nlu:
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you later
+
+- intent: bot_challenge
+  examples: |
+    - who are you?
+    - are you a bot?
+    - what can you do?
+
+- intent: provide_name
+  examples: |
+    - I am Iqra
+    - My name is Iqra Tariq
+    - Call me dello
+
+- intent: ask_personality
+  examples: |
+    - what kind of person is iqra
+    - describe your personality
+    - how would you describe yourself
+
+- intent: ask_goals
+  examples: |
+    - what are your goals
+    - what do you want to achieve
+    - your dreams and goals?
+
+- intent: ask_stress_handling
+  examples: |
+    - how do you deal with stress
+    - what do you do when you're stressed
+
+- intent: ask_favorite_season
+  examples: |
+    - what is your favorite season
+    - do you like autumn
+
+- intent: ask_love
+  examples: |
+    - who do you love
+    - is someone special in your life

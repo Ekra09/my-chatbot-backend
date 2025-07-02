@@ -1,0 +1,60 @@
+version: "3.1"
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - provide_name
+  - ask_personality
+  - ask_goals
+  - ask_stress_handling
+  - ask_favorite_season
+  - ask_love
+
+entities:
+  - username
+
+slots:
+  username:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+
+responses:
+  utter_greet:
+    - text: "Hey! How are you?"
+
+  utter_goodbye:
+    - text: "Bye! Take care."
+
+  utter_iamabot:
+    - text: "I am a bot, powered by Rasa."
+
+  utter_personality:
+    - text: "I'm a helpful, slightly messy, and adventurous protagonist (ENFJ-T) type."
+
+  utter_goals:
+    - text: "Short-term: build a personal brand, get an AI job, and marry the person I love. Long-term: live abroad, start an international brand, and perform Hajj."
+
+  utter_stress_handling:
+    - text: "When I'm stressed, I go for a walk. Nature and movement calm me down."
+
+  utter_favorite_season:
+    - text: "I love autumn — it's peaceful, cozy, and full of reflection."
+
+  utter_love:
+    - text: "The person I love has the most attractive eyes. My parents and his parents are also my world."
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - utter_iamabot
+  - utter_personality
+  - utter_goals
+  - utter_stress_handling
+  - utter_favorite_season
+  - utter_love
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

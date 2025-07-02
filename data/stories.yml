@@ -1,0 +1,29 @@
+version: "3.1"
+stories:
+- story: Introduction and personality
+  steps:
+    - intent: provide_name
+    - slot_was_set:
+        - username: "Iqra"
+    - intent: ask_personality
+    - action: utter_personality
+
+- story: Ask about future goals
+  steps:
+    - intent: ask_goals
+    - action: utter_goals
+
+- story: Ask about stress
+  steps:
+    - intent: ask_stress_handling
+    - action: utter_stress_handling
+
+- story: Ask about season
+  steps:
+    - intent: ask_favorite_season
+    - action: utter_favorite_season
+
+- story: Ask about love
+  steps:
+    - intent: ask_love
+    - action: utter_love

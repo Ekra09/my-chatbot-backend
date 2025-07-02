@@ -1,0 +1,41 @@
+version: "3.1"
+rules:
+- rule: Greet user
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Say goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Bot introduction
+  steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+- rule: Answer personality question
+  steps:
+    - intent: ask_personality
+    - action: utter_personality
+
+- rule: Answer goals
+  steps:
+    - intent: ask_goals
+    - action: utter_goals
+
+- rule: Answer stress handling
+  steps:
+    - intent: ask_stress_handling
+    - action: utter_stress_handling
+
+- rule: Answer favorite season
+  steps:
+    - intent: ask_favorite_season
+    - action: utter_favorite_season
+
+- rule: Answer love question
+  steps:
+    - intent: ask_love
+    - action: utter_love
