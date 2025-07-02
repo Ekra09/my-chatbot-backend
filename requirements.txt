@@ -1,6 +1,0 @@
-rasa==3.6.10
-requests
-aiohttp
-pydantic        
-
-
